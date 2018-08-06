@@ -8,7 +8,7 @@ const axios = require('axios');
 //returns a merged JSON object sorted by ecstasy
 async function scrape(req, res){
   let results = [];
-  //axios
+  //axios concurrently calls all api endpoints and passes the data into the sort function
   axios.all([
     axios.get('http://localhost:9000/scrapers/Expedia'),
     axios.get('http://localhost:9000/scrapers/Orbitz'),
